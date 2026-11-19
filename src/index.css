@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+:root {
+  --ink-brown: #2b1810;
+  --ink-cosmic: #14192e;
+  --slate-top: #25304d;
+  --slate-bot: #151c2e;
+  --oak-top: #8c522b;
+  --oak-bot: #572f16;
+  --parchment-top: #faf0d7;
+  --parchment-bot: #e8d4a8;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #0b0f1a;
+}
+
+.font-cartoon {
+  font-family: 'Lilita One', 'Fredoka', cursive, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-display {
+  font-family: 'Fredoka', 'Nunito', sans-serif;
+}
+
+.cartoon-stroke {
+  -webkit-text-stroke: 1.5px #2b1810;
+  paint-order: stroke fill;
+  text-shadow: 0 2.5px 0 #2b1810;
+}
+
+.cartoon-stroke-sm {
+  -webkit-text-stroke: 1px #2b1810;
+  paint-order: stroke fill;
+  text-shadow: 0 1.5px 0 #2b1810;
+}
+
+.cartoon-stroke-lg {
+  -webkit-text-stroke: 2.2px #2b1810;
+  paint-order: stroke fill;
+  text-shadow: 0 3.5px 0 #2b1810;
+}
+
+/* Hand-painted oak wood card frame */
+.wood-panel {
+  background: linear-gradient(180deg, #8c522b 0%, #6b3b1c 50%, #522b13 100%);
+  border: 2.5px solid #2b1810;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 214, 153, 0.35),
+    inset 0 -3px 0 rgba(43, 24, 16, 0.55),
+    0 4px 0 rgba(11, 15, 26, 0.65);
+}
+
+.parchment-card {
+  background: linear-gradient(180deg, #faf0d7 0%, #f1dfb8 65%, #e5cda0 100%);
+  border: 2.5px solid #2b1810;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -3px 0 rgba(158, 122, 74, 0.45),
+    0 4px 0 rgba(43, 24, 16, 0.5);
+  color: #3a2010;
+}
+
+.slate-hud {
+  background: linear-gradient(180deg, #25304d 0%, #151c2e 100%);
+  border-bottom: 2.5px solid #0b0f1a;
+  box-shadow:
+    inset 0 1px 0 rgba(130, 165, 255, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+.gold-frame {
+  background: linear-gradient(180deg, #3c2a1e 0%, #241710 100%);
+  border: 2.5px solid #f5b935;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 242, 178, 0.4),
+    0 4px 0 #2b1810;
+}
+
+/* Glossy cartoon buttons */
+.btn-cartoon {
+  position: relative;
+  overflow: hidden;
+  border: 2.5px solid #2b1810;
+  transition: transform 90ms cubic-bezier(0.2, 0.9, 0.3, 1.4), filter 120ms ease;
+  touch-action: manipulation;
+}
+
+.btn-cartoon::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6%;
+  right: 6%;
+  height: 36%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.58) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+}
+
+.btn-cartoon:active:not(:disabled) {
+  transform: translateY(3px) scale(0.95, 0.92);
+}
+
+.btn-cartoon:disabled {
+  filter: grayscale(0.75) brightness(0.75);
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.btn-emerald {
+  background: linear-gradient(180deg, #34f075 0%, #18c254 55%, #12a846 100%);
+  box-shadow: inset 0 -4px 0 #0b6b2b, 0 3px 0 #2b1810;
+}
+
+.btn-amber {
+  background: linear-gradient(180deg, #ffe055 0%, #f9b218 55%, #e68a00 100%);
+  box-shadow: inset 0 -4px 0 #9e5400, 0 3px 0 #2b1810;
+}
+
+.btn-amethyst {
+  background: linear-gradient(180deg, #d361ff 0%, #9b35f0 55%, #7c2ae8 100%);
+  box-shadow: inset 0 -4px 0 #471094, 0 3px 0 #2b1810;
+}
+
+.btn-sapphire {
+  background: linear-gradient(180deg, #44ceff 0%, #1f92f2 55%, #1475e1 100%);
+  box-shadow: inset 0 -4px 0 #0a4085, 0 3px 0 #2b1810;
+}
+
+.btn-coral {
+  background: linear-gradient(180deg, #ff7161 0%, #ea4335 55%, #d93025 100%);
+  box-shadow: inset 0 -4px 0 #8a1710, 0 3px 0 #2b1810;
+}
+
+/* Specular sheen sweep for premium buttons */
+@keyframes sheen-sweep {
+  0% {
+    transform: translateX(-140%) skewX(-24deg);
+  }
+  28%,
+  100% {
+    transform: translateX(260%) skewX(-24deg);
+  }
+}
+
+.btn-sheen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: sheen-sweep 3.2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float-pop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.75);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -22px) scale(1.18);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -68px) scale(0.95);
+  }
+}
+
+.animate-float-pop {
+  animation: float-pop 0.85s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+@keyframes gentle-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 1.8s infinite ease-in-out;
+}
+
+/* Custom sleek scrollbar for lists */
+.tavern-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tavern-scroll::-webkit-scrollbar-track {
+  background: rgba(11, 15, 26, 0.35);
+}
+
+.tavern-scroll::-webkit-scrollbar-thumb {
+  background: rgba(245, 185, 53, 0.45);
+  border-radius: 999px;
+}

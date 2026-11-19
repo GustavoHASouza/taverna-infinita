@@ -1,0 +1,20 @@
+{
+  "name": "Taverna Infinita: Crônicas do Caldeirão Dourado",
+  "short_name": "Taverna Infinita",
+  "description": "Idle Tycoon RPG Cartoon — Construa uma taverna mágica através de dimensões infinitas!",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "portrait",
+  "background_color": "#0B0F1A",
+  "theme_color": "#151C2E",
+  "icons": [
+    {
+      "src": "art/bg_brasa_clara.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
